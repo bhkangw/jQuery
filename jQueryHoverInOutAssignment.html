@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hover In/Out</title>
+	<style type="text/css"></style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("img").hover(function(){
+				$(this).attr("temp",$(this).attr("src"))
+				$(this).attr("src",$(this).attr("data-alt-src"))
+				$(this).attr("data-alt-src",$(this).attr("temp"))
+			})
+		})
+	</script>
+</head>
+<body>
+<img src="https://cdn.shopify.com/s/files/1/1017/2183/t/2/assets/live-preview-potato.png" data-alt-src="https://www-pqa2.wendys.com/cs/Satellite?blobcol=urldata&blobheader=image%2Fpng&blobkey=id&blobtable=MungoBlobs&blobwhere=1365311525750&ssbinary=true" temp="">
+<img src="https://cdn.shopify.com/s/files/1/1017/2183/t/2/assets/live-preview-potato.png" data-alt-src="https://www-pqa2.wendys.com/cs/Satellite?blobcol=urldata&blobheader=image%2Fpng&blobkey=id&blobtable=MungoBlobs&blobwhere=1365311525750&ssbinary=true" temp="">
+<img src="https://cdn.shopify.com/s/files/1/1017/2183/t/2/assets/live-preview-potato.png" data-alt-src="https://www-pqa2.wendys.com/cs/Satellite?blobcol=urldata&blobheader=image%2Fpng&blobkey=id&blobtable=MungoBlobs&blobwhere=1365311525750&ssbinary=true" temp="">
+<img src="https://cdn.shopify.com/s/files/1/1017/2183/t/2/assets/live-preview-potato.png" data-alt-src="https://www-pqa2.wendys.com/cs/Satellite?blobcol=urldata&blobheader=image%2Fpng&blobkey=id&blobtable=MungoBlobs&blobwhere=1365311525750&ssbinary=true" temp="">
+<img src="https://cdn.shopify.com/s/files/1/1017/2183/t/2/assets/live-preview-potato.png" data-alt-src="https://www-pqa2.wendys.com/cs/Satellite?blobcol=urldata&blobheader=image%2Fpng&blobkey=id&blobtable=MungoBlobs&blobwhere=1365311525750&ssbinary=true" temp="">
+<img src="https://cdn.shopify.com/s/files/1/1017/2183/t/2/assets/live-preview-potato.png" data-alt-src="https://www-pqa2.wendys.com/cs/Satellite?blobcol=urldata&blobheader=image%2Fpng&blobkey=id&blobtable=MungoBlobs&blobwhere=1365311525750&ssbinary=true" temp="">
+</html>
