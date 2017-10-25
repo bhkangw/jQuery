@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+			.redfont{
+				color: red;
+				font-size: 20px;
+			}
+
+			button{
+				color: red;
+				border-radius: 20px;
+			}
+
+			h3{
+				font-family: sans-serif;
+			}
+
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			
+			$(".hide").click(function(){
+				$(".hideshow").hide()
+
+			})
+
+			$(".show").click(function(){
+				$(".hideshow").show()
+
+			})
+
+			$(".toggle").click(function(){
+				$(".togglep").toggle()
+			})
+
+
+			$(".slideUp").click(function(){
+				$(".slideupdown").slideUp()
+			})
+
+			$(".slideDown").click(function(){
+				$(".slideupdown").slideDown()
+			})
+
+			$(".slideToggle").click(function(){
+				$(".slideTogglep").slideToggle()
+			})
+
+			$(".fadeIn").click(function(){
+				$(".fadeinout").fadeIn()
+			})
+
+			$(".fadeOut").click(function(){
+				$(".fadeinout").fadeOut()
+			})
+
+			$(".addClass").click(function(){
+				$(".addClassp").addClass("redfont")
+			})
+
+			$(".before").click(function(){
+				$(".beforep").before("<p>Wassap</p>")
+			})
+
+			$(".after").click(function(){
+				$(".afterp").after("<p>Wassap</p>")
+			})
+
+			$(".append").click(function(){
+				$(".appendp").append("<b>POTATO!</b>")
+			})
+
+			$(".html").click(function(){
+				$(".htmlp").html("<i>Where did everything go?</i>")
+			})
+
+			$(".attr").click(function(){
+				$("img").attr("width","200")
+			})
+
+			$(".val").click(function(){
+				$("input:text").val("^__^")
+			})
+
+			$(".text").click(function(){
+				$("p").text("Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.")	
+			})
+
+		})
+
+
+
+		
+	</script>
+</head>
+<body>
+	
+	<div class="row">
+		<h3>.hide/show</h3>
+		<button class="hide">.hide</button>
+		<button class="show">.show</button>
+		<p class="hideshow">Click the ".hide" button to hide this paragraph! Click the ".show" button to make it reappear!</p>
+	</div><hr>
+
+	<div class="row">
+		<h3>.toggle</h3>
+		<button class="toggle">.toggle</button>
+		<p class="togglep">Click the ".toggle" button to toggle between hiding and showing this paragraph!</p>
+	</div><hr>
+
+	<div class="row">
+		<h3>.slideDown/.slideUp</h3>
+		<button class="slideUp">.slideUp</button>
+		<button class="slideDown">.slideDown</button>
+		<p class="slideupdown">Click the .slideDown/.slideUp buttons to switch between hiding and showing this paragraph, but look for the cool sliding animation!</p>
+	</div><hr>
+
+	<div class="row">
+		<h3>.slideToggle</h3>
+		<button class="slideToggle">.slideToggle</button>
+		<p class="slideTogglep">Click the slideToggle button to toggle between hiding and showing this paragraph, but look for the cool sliding animation!</p>
+	</div><hr>
+
+	<div class="row">
+		<h3>.fadeIn/.fadeOut</h3>
+		<button class="fadeOut">.fadeOut</button>
+		<button class="fadeIn">.fadeIn</button>
+		<p class="fadeinout">Click the .fadeIn/.fadeOut buttons to switch between hiding and showing this paragraph, but look for the cool fading animation!</p>
+	</div><hr>
+
+	<div class="row">
+		<h3>.addClass</h3>
+		<button class="addClass">.addClass</button>
+		<p class="addClassp">Click the button to change color of this line and make bigger!</p>
+	</div><hr>
+
+	<div class="row">
+		<h3>.before</h3>
+		<button class="before">.before</button>
+		<p class="beforep">Click the button to add a line BEFORE this paragraph!</p>
+	</div><hr>
+
+	<div class="row">
+		<h3>.after</h3>
+		<button class="after">.after</button>
+		<p class="afterp">Click the button to add a line AFTER this paragraph!</p>
+	</div><hr>
+
+	<div class="row">
+		<h3>.append</h3>
+		<button class="append">.append</button>
+		<p class="appendp">Click the button to reveal a secret word: </p>
+	</div><hr>
+
+	<div class="row">
+		<h3>.html</h3>
+		<button class="html">.html</button>
+		<p class="htmlp">Click the button to replace this paragraph with an completely different line!</p>
+	</div><hr>
+
+		<div class="row">
+		<h3>.attr</h3>
+		<button class="attr">.attr</button>
+		<p class="attrp">Click the button to change the size of the image below!</p>
+		<img src="https://cdn.shopify.com/s/files/1/1017/2183/t/2/assets/live-preview-potato.png">
+	</div><hr>
+
+	<div class="row">
+		<h3>.val</h3>
+		<button class="val">.val</button>
+		<p>Click the button to see a happy face in the form below:</p>
+		<input type="text" name="" class="val">
+	</div><hr>
+
+		<div class="row">
+		<h3>.text</h3>
+		<button class="text">.text</button>
+		<p>Click the button to change all the paragraphs on this whole page to gibberish!</p>
+	</div><hr>
+
+</body>
+</html>
