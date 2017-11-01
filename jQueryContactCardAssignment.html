@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users</title>
+	
+	<style>
+
+		form{
+			width: 500px;
+			display: inline-block;
+		}
+
+		.holder{
+			display: inline-block;
+			width: 310px;
+			height: 700px;
+			vertical-align: top;
+		}
+
+		.card{
+			border: 1px solid black;
+			width: 300px;
+			height: 200px;
+			display: inline-block;
+			margin-top: 10px;
+		}
+
+		h2{
+			text-align: center;
+			font-size: 40px;
+		}
+
+		p{
+			text-align: center;
+			margin-top: 60px;
+		}
+
+		h3{
+			text-align: center;
+			margin-top: 20px;
+		}
+
+	</style>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+
+		$("form").submit(function(){
+			return false;
+		});
+
+		$("form").submit(function(){
+			$(".holder").append("<div class='card'><h2>" + $("#firstName").val() + " " + $("#lastName").val() + "</h2><p>Click for description!</p></div>");
+		});
+
+     	$(document).on('click', 'div.card', function(){ // this is using the document.on feature that allows action to dynamic elements
+         	$(this).html("<h3>" + $("#description").val() + "</h3>");
+     	});
+
+
+		});
+
+	</script>
+</head>
+
+<body>
+	<h1>Contact Card</h1>
+	<form>
+		First Name: <input type="text" id="firstName"><br><br>
+		Last Name: <input type="text" id="lastName"><br><br>
+		Description: <br><textarea rows="4" cols="50" id="description"></textarea><br><br>
+		<input type="submit" value="Add User!">
+	</form>
+	<div class="holder"></div>
+</body>
+</html>
