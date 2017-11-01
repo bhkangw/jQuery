@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users</title>
+	
+	<style>
+		table, th, td{
+   			border: 1px solid black;
+   			border-collapse: collapse;
+   			padding: 15px;
+		}
+	</style>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+
+		$("form").submit(function(){ 	// this is required
+			return false;				// so that the form doesn't refresh and the table can be added onto
+		});
+
+		// Solution #1: creating variables and calling on those variables by appending markup. I used .append() to add value which I got using .val()
+
+		// $("form").submit(function(){
+		// 	var firstName = $("#firstName").val();
+		// 	var lastName = $("#lastName").val();
+		// 	var email = $("#email").val();
+		// 	var contact = $("#contact").val();
+		// 	var markup = "<tr><td>" + firstName + "</td><td>" + lastName + "</td><td>" + email + "</td><td>" + contact + "</td></tr>"
+		// 	$("table").append(markup);
+		// });
+
+
+		// Solution #2: Better solution; appending directly into the table using selectors. Literally condensed the above, first by replacing the variables within "markup" with the selectors themselves. Then by replacing the markup variable with its contents directly.
+
+		$("form").submit(function(){
+			$("table").append("<tr><td>" + $("#firstName").val() + "</td><td>" + $("#lastName").val() + "</td><td>" + $("#email").val() + "</td><td>" + $("#contact").val() + "</td></tr>");
+		});
+		})
+
+	</script>
+</head>
+
+<body>
+	<table>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email Address</th>
+			<th>Contact #</th>
+		</tr>
+<!-- 		<tr>
+			<td>Brian</td>
+			<td>Kang</td>
+			<td>brian@gmail.com</td>
+			<td>425</td>
+		</tr> -->
+	</table>
+	<h1>Add User</h1>
+	<form>
+		First Name: <input type="text" id="firstName"><br><br>
+		Last Name: <input type="text" id="lastName"><br><br>
+		Email: <input type="text" id="email"><br><br>
+		Phone: <input type="text" id="contact"><br><br>
+		<input type="submit" value="Add User!">
+	</form>
+</body>
+</html>
+
+
+
+
