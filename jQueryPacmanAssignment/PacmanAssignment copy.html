@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pacman baby</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		
+		var pacman = {
+			"x": 1, 
+			"y": 1
+		}
+
+		var world = [
+			[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+			[0,2,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0],
+			[0,1,0,0,1,1,0,0,0,1,0,1,0,0,0,1,1,0,0,1,0],
+			[0,1,0,0,1,1,0,0,0,1,0,1,0,0,0,1,1,0,0,1,0],
+			[0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
+			[0,1,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,1,0],
+			[0,1,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,1,0],
+			[0,1,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,1,0],
+			[0,1,1,1,1,1,1,0,0,0,1,0,0,0,1,1,1,1,1,1,0],
+			[0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0],
+			[0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0],
+			[0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0],
+			[0,1,1,1,1,1,1,0,0,0,1,0,0,0,1,1,1,1,1,1,0],
+			[0,1,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,1,0],
+			[0,1,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,1,0],
+			[0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
+			[0,1,0,0,0,0,1,0,0,1,0,1,0,0,1,0,0,0,0,1,0],
+			[0,1,0,0,0,0,1,0,0,1,0,1,0,0,1,0,0,0,0,1,0],
+			[0,1,0,0,0,0,1,0,0,1,0,1,0,0,1,0,0,0,0,1,0],
+			[0,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0],
+			[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		];
+
+		function DrawWorld(){
+			var htmlString = "";
+			for(var y = 0; y < world.length; y++){
+				for(var x = 0; x < world[y].length; x++){
+					if(world[y][x] === 0){
+						htmlString += "<div class='wall'></div>"
+					}
+					if(world[y][x] === 1){
+						htmlString += "<div class='ground'><img class='potato' src='potato.gif'></div>"
+					}
+					if(world[y][x] === 2){
+						htmlString += "<div class='ground'><img class='pacman' src='pacman.gif' data-rotate='90'></div>"
+					}
+					if(world[y][x] === 3){
+						htmlString += "<div class='ground'></div>"
+					}
+				}
+			}
+			$(".wrapper").html(htmlString);
+		}
+
+		$(document).ready(function(){
+			DrawWorld();
+		})
+		
+		$(document).on("keydown", "body", function(e){
+			if(e["keyCode"] === 37 && world[pacman.y][pacman.x-1]!==0){ // left
+				console.log("clicked left");
+				world[pacman.y][pacman.x] = 3;
+				pacman.x--;
+				world[pacman.y][pacman.x] = 2;
+				// $(".pacman").css({'transform': 'rotate(180deg)'});
+				$(".pacman").rotate(20*Math.PI/180);
+				DrawWorld();
+			}
+		})
+		$(document).on("keydown", "body", function(e){
+			if(e["keyCode"] === 38 && world[pacman.y-1][pacman.x]!==0){ // up
+				console.log("clicked up");
+				world[pacman.y][pacman.x] = 3;
+				pacman.y--;
+				world[pacman.y][pacman.x] = 2;
+				DrawWorld();
+			}
+		})
+		$(document).on("keydown", "body", function(e){
+			if(e["keyCode"] === 39 && world[pacman.y][pacman.x+1]!==0){ // right
+				console.log("clicked right");
+				world[pacman.y][pacman.x] = 3;
+				pacman.x++;
+				world[pacman.y][pacman.x] = 2;
+				DrawWorld();
+			}
+		})
+		$(document).on("keydown", "body", function(e){
+			if(e["keyCode"] === 40 && world[pacman.y+1][pacman.x]!==0){ // down 
+				console.log("clicked down");
+				world[pacman.y][pacman.x] = 3;
+				pacman.y++;
+				world[pacman.y][pacman.x] = 2;
+				DrawWorld();
+			}
+		})
+
+
+
+
+
+	</script>
+</head>
+<body>
+	<div class="wrapper"></div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+.wall{
+	width: 40px;
+	height: 40px;
+	background-color: darkblue;
+	display: inline-block;
+	margin-bottom:-4px;
+}
+
+.ground{
+	width: 40px;
+	height: 40px;
+	background-color: black;
+	display: inline-block;
+	margin-bottom:-4px;
+}
+
+.wrapper{
+	width: 840px;
+}
+
+img{
+	height: 40px;
+	margin-bottom:-4px;
+}
+
+.pacman{
+	margin-bottom:-4px;
+	transform: rotate(180deg);
+*/}
