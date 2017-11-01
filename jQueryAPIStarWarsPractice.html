@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			$("button").click(function(){
+				$.get("https://swapi.co/api/people/" + $("input").val() + "/?format=json", function(res) {
+					console.log(res);
+					$("ul").append("<li>" + res["name"] + "</li>");
+				}, "json");
+			})
+		
+
+		});
+
+	</script>
+</head>
+	<input type="test" name="">
+	<button>PING!</button>
+	<ul>
+	</ul>
+
+<body>
+</body>
+</html>
